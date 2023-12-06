@@ -1,0 +1,12 @@
+export { default as Login } from "./Auth/Login.vue";
+export { default as Register } from "./Auth/Register.vue";
+export { default as ForgotPassword } from "./Auth/ForgotPassword.vue";
+export { default as Home } from "./Home.vue";
+export { default as AboutUs } from "./AboutUs.vue";
+export { default as Menu } from "./Menu.vue";
+export { default as MenuDetail } from "./MenuDetail.vue";
+export { default as Cart } from "./Cart.vue";
+export { default as Checkout } from "./Checkout.vue";
+export { default as Reservation } from "./Reservation.vue";
+export { default as Account } from "./Account.vue";
+export { default as Payment } from "./Payment.vue";

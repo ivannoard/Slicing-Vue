@@ -1,0 +1,16 @@
+export { default as bgAuth } from "./bg-auth.png";
+export { default as bgForgot } from "./forgot-bg.png";
+export { default as JumbotronImage } from "./jumbotron-image.png";
+export { default as AboutKahuripan } from "./about-kahuripan.png";
+export { default as Menu1 } from "./menu-1.png";
+export { default as Menu2 } from "./menu-2.png";
+export { default as Menu3 } from "./menu-3.png";
+export { default as Map } from "./map.png";
+export { default as FB } from "./fb.png";
+export { default as WA } from "./wa.png";
+export { default as About1 } from "./about-1.png";
+export { default as About2 } from "./about-2.png";
+export { default as About3 } from "./about-3.png";
+export { default as About4 } from "./about-4.png";
+export { default as About5 } from "./about-5.png";
+export { default as About6 } from "./about-6.png";
