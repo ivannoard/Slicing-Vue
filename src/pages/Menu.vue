@@ -8,11 +8,11 @@ let active = ref("Makanan");
 const menuButtons = ["Makanan", "Minuman", "Snack"];
 </script>
 <template>
-  <div class="pt-28 px-10 container mx-auto">
+  <div class="pt-28 px-5 lg:px-10 container mx-auto">
     <section>
-      <div class="menus w-1/3 rounded-full p-2 flex gap-2">
+      <div class="menus w-full lg:w-1/3 rounded-full p-2 flex flex-col gap-2">
         <div
-          class="menu w-1/3 rounded-full border px-5 py-1 text-dark cursor-pointer"
+          class="menu w-full lg:w-1/3 rounded-full border px-5 py-1 text-dark cursor-pointer"
           v-for="button in menuButtons"
           :key="button"
           :class="active === button && 'bg-primary text-secondary'"
@@ -22,13 +22,13 @@ const menuButtons = ["Makanan", "Minuman", "Snack"];
             }
           "
         >
-          <p>{{ button }}</p>
+          <p class="text-center lg:text-start">{{ button }}</p>
         </div>
       </div>
     </section>
     <section class="mt-4">
-      <div class="cards flex flex-wrap justify-around gap-10">
-        <div class="card w-1/4 border shadow-md p-4 rounded-md">
+      <div class="cards flex flex-wrap justify-center lg:justify-around gap-10">
+        <div class="card w-full lg:w-1/4 border shadow-md p-4 rounded-md">
           <div
             class="card-image-wrapper flex items-center justify-center"
             @click="() => router.push('/menu/1')"
@@ -48,16 +48,18 @@ const menuButtons = ["Makanan", "Minuman", "Snack"];
               pedas, sedang, tidak pedas
             </p>
             <div
-              class="card-price-button flex items-center justify-between mt-5"
+              class="card-price-button flex flex-col lg:flex-row items-start lg:items-center justify-between mt-5"
             >
               <h5 class="font-semibold text-lg">Rp. 12.000</h5>
-              <button class="bg-primary text-white px-10 py-2 rounded-full">
+              <button
+                class="mt-3 lg:mt-0 bg-primary text-white px-10 py-2 rounded-full w-full lg:w-auto"
+              >
                 + Keranjang
               </button>
             </div>
           </div>
         </div>
-        <div class="card w-1/4 border shadow-md p-4 rounded-md">
+        <div class="card w-full lg:w-1/4 border shadow-md p-4 rounded-md">
           <div
             class="card-image-wrapper flex items-center justify-center"
             @click="() => router.push('/menu/2')"
@@ -77,16 +79,18 @@ const menuButtons = ["Makanan", "Minuman", "Snack"];
               dan sambal terpisah
             </p>
             <div
-              class="card-price-button flex items-center justify-between mt-5"
+              class="card-price-button flex flex-col lg:flex-row items-start lg:items-center justify-between mt-5"
             >
               <h5 class="font-semibold text-lg">Rp. 10.000</h5>
-              <button class="bg-primary text-white px-10 py-2 rounded-full">
+              <button
+                class="mt-3 lg:mt-0 bg-primary text-white px-10 py-2 rounded-full w-full lg:w-auto"
+              >
                 + Keranjang
               </button>
             </div>
           </div>
         </div>
-        <div class="card w-1/4 border shadow-md p-4 rounded-md">
+        <div class="card w-full lg:w-1/4 border shadow-md p-4 rounded-md">
           <div
             class="card-image-wrapper flex items-center justify-center"
             @click="() => router.push('/menu/3')"
@@ -106,16 +110,18 @@ const menuButtons = ["Makanan", "Minuman", "Snack"];
               1-5
             </p>
             <div
-              class="card-price-button flex items-center justify-between mt-5"
+              class="card-price-button flex flex-col lg:flex-row items-start lg:items-center justify-between mt-5"
             >
               <h5 class="font-semibold text-lg">Rp. 10.000</h5>
-              <button class="bg-primary text-white px-10 py-2 rounded-full">
+              <button
+                class="mt-3 lg:mt-0 bg-primary text-white px-10 py-2 rounded-full w-full lg:w-auto"
+              >
                 + Keranjang
               </button>
             </div>
           </div>
         </div>
-        <div class="card w-1/4 border shadow-md p-4 rounded-md">
+        <div class="card w-full lg:w-1/4 border shadow-md p-4 rounded-md">
           <div
             class="card-image-wrapper flex items-center justify-center"
             @click="() => router.push('/menu/4')"
@@ -135,16 +141,18 @@ const menuButtons = ["Makanan", "Minuman", "Snack"];
               pedas, sedang, tidak pedas
             </p>
             <div
-              class="card-price-button flex items-center justify-between mt-5"
+              class="card-price-button flex flex-col lg:flex-row items-start lg:items-center justify-between mt-5"
             >
               <h5 class="font-semibold text-lg">Rp. 12.000</h5>
-              <button class="bg-primary text-white px-10 py-2 rounded-full">
+              <button
+                class="mt-3 lg:mt-0 bg-primary text-white px-10 py-2 rounded-full w-full lg:w-auto"
+              >
                 + Keranjang
               </button>
             </div>
           </div>
         </div>
-        <div class="card w-1/4 border shadow-md p-4 rounded-md">
+        <div class="card w-full lg:w-1/4 border shadow-md p-4 rounded-md">
           <div
             class="card-image-wrapper flex items-center justify-center"
             @click="() => router.push('/menu/5')"
@@ -164,16 +172,18 @@ const menuButtons = ["Makanan", "Minuman", "Snack"];
               dan sambal terpisah
             </p>
             <div
-              class="card-price-button flex items-center justify-between mt-5"
+              class="card-price-button flex flex-col lg:flex-row items-start lg:items-center justify-between mt-5"
             >
               <h5 class="font-semibold text-lg">Rp. 10.000</h5>
-              <button class="bg-primary text-white px-10 py-2 rounded-full">
+              <button
+                class="mt-3 lg:mt-0 bg-primary text-white px-10 py-2 rounded-full w-full lg:w-auto"
+              >
                 + Keranjang
               </button>
             </div>
           </div>
         </div>
-        <div class="card w-1/4 border shadow-md p-4 rounded-md">
+        <div class="card w-full lg:w-1/4 border shadow-md p-4 rounded-md">
           <div
             class="card-image-wrapper flex items-center justify-center"
             @click="() => router.push('/menu/6')"
@@ -193,16 +203,18 @@ const menuButtons = ["Makanan", "Minuman", "Snack"];
               1-5
             </p>
             <div
-              class="card-price-button flex items-center justify-between mt-5"
+              class="card-price-button flex flex-col lg:flex-row items-start lg:items-center justify-between mt-5"
             >
               <h5 class="font-semibold text-lg">Rp. 10.000</h5>
-              <button class="bg-primary text-white px-10 py-2 rounded-full">
+              <button
+                class="mt-3 lg:mt-0 bg-primary text-white px-10 py-2 rounded-full w-full lg:w-auto"
+              >
                 + Keranjang
               </button>
             </div>
           </div>
         </div>
-        <div class="card w-1/4 border shadow-md p-4 rounded-md">
+        <div class="card w-full lg:w-1/4 border shadow-md p-4 rounded-md">
           <div
             class="card-image-wrapper flex items-center justify-center"
             @click="() => router.push('/menu/7')"
@@ -222,16 +234,18 @@ const menuButtons = ["Makanan", "Minuman", "Snack"];
               pedas, sedang, tidak pedas
             </p>
             <div
-              class="card-price-button flex items-center justify-between mt-5"
+              class="card-price-button flex flex-col lg:flex-row items-start lg:items-center justify-between mt-5"
             >
               <h5 class="font-semibold text-lg">Rp. 12.000</h5>
-              <button class="bg-primary text-white px-10 py-2 rounded-full">
+              <button
+                class="mt-3 lg:mt-0 bg-primary text-white px-10 py-2 rounded-full w-full lg:w-auto"
+              >
                 + Keranjang
               </button>
             </div>
           </div>
         </div>
-        <div class="card w-1/4 border shadow-md p-4 rounded-md">
+        <div class="card w-full lg:w-1/4 border shadow-md p-4 rounded-md">
           <div
             class="card-image-wrapper flex items-center justify-center"
             @click="() => router.push('/menu/8')"
@@ -251,16 +265,18 @@ const menuButtons = ["Makanan", "Minuman", "Snack"];
               dan sambal terpisah
             </p>
             <div
-              class="card-price-button flex items-center justify-between mt-5"
+              class="card-price-button flex flex-col lg:flex-row items-start lg:items-center justify-between mt-5"
             >
               <h5 class="font-semibold text-lg">Rp. 10.000</h5>
-              <button class="bg-primary text-white px-10 py-2 rounded-full">
+              <button
+                class="mt-3 lg:mt-0 bg-primary text-white px-10 py-2 rounded-full w-full lg:w-auto"
+              >
                 + Keranjang
               </button>
             </div>
           </div>
         </div>
-        <div class="card w-1/4 border shadow-md p-4 rounded-md">
+        <div class="card w-full lg:w-1/4 border shadow-md p-4 rounded-md">
           <div
             class="card-image-wrapper flex items-center justify-center"
             @click="() => router.push('/menu/9')"
@@ -280,10 +296,12 @@ const menuButtons = ["Makanan", "Minuman", "Snack"];
               1-5
             </p>
             <div
-              class="card-price-button flex items-center justify-between mt-5"
+              class="card-price-button flex flex-col lg:flex-row items-start lg:items-center justify-between mt-5"
             >
               <h5 class="font-semibold text-lg">Rp. 10.000</h5>
-              <button class="bg-primary text-white px-10 py-2 rounded-full">
+              <button
+                class="mt-3 lg:mt-0 bg-primary text-white px-10 py-2 rounded-full w-full lg:w-auto"
+              >
                 + Keranjang
               </button>
             </div>

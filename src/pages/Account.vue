@@ -17,22 +17,28 @@ function handleActive(menu) {
 </script>
 <template>
   <div class="pt-32">
-    <section class="container mx-auto px-10">
-      <div class="card bg-white border w-full p-10">
-        <div class="menu flex w-full">
+    <section class="container mx-auto px-5 lg:px-10">
+      <div class="card border w-full p-2 lg:p-10">
+        <div class="menu overflow-x-scroll flex">
           <div
             v-for="(menu, index) in menuArray"
             :key="index"
-            class="w-1/4 menu-item text-center font-semibold border-b-2 cursor-pointer"
+            flex-wrap
+            class="lg:w-1/4 menu-item text-center font-semibold border-b-2 cursor-pointer"
             :class="{ 'border-primary': menu === active }"
             @click="handleActive(menu)"
           >
-            {{ menu }}
+            <div class="w-[200px] lg:w-auto">
+              <p>{{ menu }}</p>
+            </div>
           </div>
         </div>
-        <div v-if="active === 'Data Diri'" class="grid grid-cols-12 gap-8 mt-8">
-          <div class="col-span-5">
-            <div class="border rounded-md p-4">
+        <div
+          v-if="active === 'Data Diri'"
+          class="lg:grid lg:grid-cols-12 gap-8 mt-8"
+        >
+          <div class="lg:col-span-5">
+            <div class="border rounded-md lg:p-4">
               <div
                 class="bg-primary w-full h-[400px] flex items-center justify-center"
               >
@@ -40,30 +46,32 @@ function handleActive(menu) {
               </div>
             </div>
           </div>
-          <div class="col-span-7">
+          <div class="lg:col-span-7">
             <div class="biodata">
-              <h4 class="font-semibold text-xl mb-4">Ubah Biodata Diri</h4>
-              <div class="group flex mb-4">
-                <p class="w-1/4">Nama</p>
+              <h4 class="font-semibold text-lg lg:text-xl mt-2 lg:mt-0 mb-4">
+                Ubah Biodata Diri
+              </h4>
+              <div class="group flex flex-wrap mb-4">
+                <p class="w-full lg:w-1/4">Nama</p>
                 <p>
                   Ahun Ismi Aziz <span class="text-primary ml-4">Ubah</span>
                 </p>
               </div>
-              <div class="group flex mb-4">
-                <p class="w-1/4">Tanggal Lahir</p>
+              <div class="group flex flex-wrap mb-4">
+                <p class="w-full lg:w-1/4">Tanggal Lahir</p>
                 <p>
                   <span class="text-primary">Tambah Tanggal Lahir</span>
                 </p>
               </div>
-              <div class="group flex mb-8">
-                <p class="w-1/4">Tanggal Lahir</p>
+              <div class="group flex flex-wrap mb-8">
+                <p class="w-full lg:w-1/4">Tanggal Lahir</p>
                 <p>
                   <span class="text-primary">Tambah Jenis Kelamin</span>
                 </p>
               </div>
-              <h4 class="font-semibold text-xl mb-4">Ubah Kontak</h4>
-              <div class="group flex mb-4">
-                <p class="w-1/4">Nama</p>
+              <h4 class="font-semibold text-lg lg:text-xl mb-4">Ubah Kontak</h4>
+              <div class="group flex flex-wrap mb-4">
+                <p class="w-full lg:w-1/4">Nama</p>
                 <p>
                   ahunismiaziz@gmail.com
                   <span
@@ -73,14 +81,14 @@ function handleActive(menu) {
                   <span class="text-primary ml-4">Ubah</span>
                 </p>
               </div>
-              <div class="group flex mb-8">
-                <p class="w-1/4">Nomor Telepon</p>
+              <div class="group flex flex-wrap mb-8">
+                <p class="w-full lg:w-1/4">Nomor Telepon</p>
                 <p>
                   869349739756238
                   <span class="text-primary ml-4">Ubah</span>
                 </p>
               </div>
-              <h4 class="font-semibold text-xl mb-4">Alamat</h4>
+              <h4 class="font-semibold text-lg lg:text-xl mb-4">Alamat</h4>
               <div class="group flex mb-8">
                 <p class="">
                   Jl. Ir H. Juanda No.95, Cemp. Putih, Kec. Ciputat Timur, Jawa
@@ -93,7 +101,7 @@ function handleActive(menu) {
         </div>
         <div v-if="active === 'Status Pesanan'">
           <div v-if="!activeReview">
-            <div class="grid grid-cols-12 gap-8 mt-8">
+            <div class="lg:grid lg:grid-cols-12 gap-8 mt-8">
               <div class="col-span-4">
                 <div class="form-group">
                   <input
@@ -105,7 +113,7 @@ function handleActive(menu) {
                   />
                 </div>
               </div>
-              <div class="col-span-4">
+              <div class="col-span-4 mt-2 lg:mt-0">
                 <div class="form-group">
                   <select
                     name=""
@@ -119,7 +127,7 @@ function handleActive(menu) {
                   </select>
                 </div>
               </div>
-              <div class="col-span-4">
+              <div class="col-span-4 mt-2 lg:mt-0">
                 <div class="form-group">
                   <input
                     type="date"
@@ -135,7 +143,9 @@ function handleActive(menu) {
               <div
                 class="card bg-white rounded-[12px] w-full border shadow-md p-5"
               >
-                <div class="date text-[#6D6D6D] flex items-center gap-3">
+                <div
+                  class="date text-[#6D6D6D] flex flex-wrap items-center gap-3"
+                >
                   <p>03 Juli 2022</p>
                   <p
                     class="inline-block px-3 py-[3px] rounded-lg text-[#A80038] bg-[#eea7bf]"
@@ -144,32 +154,42 @@ function handleActive(menu) {
                   </p>
                   <p>#325245</p>
                 </div>
-                <div class="card-content grid grid-cols-12 gap-5 mt-3">
+                <div class="card-content lg:grid lg:grid-cols-12 gap-5 mt-3">
                   <div class="col-span-3">
                     <div
                       class="w-full h-[246px] bg-[#6D6D6D] rounded-[10px]"
                     ></div>
                   </div>
                   <div class="col-span-6">
-                    <h4 class="text-2xl font-semibold">Ayam Geprek</h4>
-                    <div class="my-10">
+                    <h4 class="text-lg lg:text-2xl mt-3 lg:mt-0 font-semibold">
+                      Ayam Geprek
+                    </h4>
+                    <div class="my-3 lg:my-10">
                       <p class="text-[#6D6D6D]">Harga: 12.000</p>
                       <p class="text-[#6D6D6D]">Jumlah Pesanan : 30 Porsi</p>
                     </div>
-                    <h5 class="text-xl font-semibold text-[#2F73FE]">Proses</h5>
+                    <h5 class="text-md lg:text-xl font-semibold text-[#2F73FE]">
+                      Proses
+                    </h5>
                   </div>
                   <div class="col-span-3 flex gap-10 items-center">
-                    <div class="h-1/2 w-[3px] bg-[#6D6D6D]"></div>
-                    <div class="mb-10">
+                    <div
+                      class="hidden lg:block h-1/2 w-[3px] bg-[#6D6D6D]"
+                    ></div>
+                    <div class="mb-3 lg:mb-10">
                       <p class="text-[#6D6D6D]">Total Belanja</p>
-                      <h4 class="text-primary font-semibold text-3xl">
+                      <h4
+                        class="text-primary font-semibold text-lg lg:text-3xl"
+                      >
                         Rp. 360.000
                       </h4>
                     </div>
                   </div>
                 </div>
-                <div class="flex justify-end items-center gap-4">
-                  <p class="text-primary font-semibold">
+                <div
+                  class="flex justify-center lg:justify-end items-center gap-4"
+                >
+                  <p class="text-primary font-semibold text-sm lg:text-lg">
                     Lihat Detail Transaksi
                   </p>
                   <!-- <button class="bg-primary py-2 px-5 rounded-[10px] text-white">
@@ -180,7 +200,9 @@ function handleActive(menu) {
               <div
                 class="card bg-white rounded-[12px] w-full border shadow-md p-5"
               >
-                <div class="date text-[#6D6D6D] flex items-center gap-3">
+                <div
+                  class="date text-[#6D6D6D] flex flex-wrap items-center gap-3"
+                >
                   <p>03 Juli 2022</p>
                   <p
                     class="inline-block px-3 py-[3px] rounded-lg text-[#A80038] bg-[#eea7bf]"
@@ -189,32 +211,42 @@ function handleActive(menu) {
                   </p>
                   <p>#325245</p>
                 </div>
-                <div class="card-content grid grid-cols-12 gap-5 mt-3">
+                <div class="card-content lg:grid lg:grid-cols-12 gap-5 mt-3">
                   <div class="col-span-3">
                     <div
                       class="w-full h-[246px] bg-[#6D6D6D] rounded-[10px]"
                     ></div>
                   </div>
                   <div class="col-span-6">
-                    <h4 class="text-2xl font-semibold">Ayam Geprek</h4>
-                    <div class="my-10">
+                    <h4 class="text-lg lg:text-2xl mt-3 lg:mt-0 font-semibold">
+                      Ayam Geprek
+                    </h4>
+                    <div class="my-3 lg:my-10">
                       <p class="text-[#6D6D6D]">Harga: 12.000</p>
                       <p class="text-[#6D6D6D]">Jumlah Pesanan : 30 Porsi</p>
                     </div>
-                    <h5 class="text-xl font-semibold text-primary">Selesai</h5>
+                    <h5 class="text-md lg:text-xl font-semibold text-primary">
+                      Selesai
+                    </h5>
                   </div>
                   <div class="col-span-3 flex gap-10 items-center">
-                    <div class="h-1/2 w-[3px] bg-[#6D6D6D]"></div>
-                    <div class="mb-10">
+                    <div
+                      class="hidden lg:block h-1/2 w-[3px] bg-[#6D6D6D]"
+                    ></div>
+                    <div class="mb-3 lg:mb-10">
                       <p class="text-[#6D6D6D]">Total Belanja</p>
-                      <h4 class="text-primary font-semibold text-3xl">
+                      <h4
+                        class="text-primary font-semibold text-lg lg:text-3xl"
+                      >
                         Rp. 360.000
                       </h4>
                     </div>
                   </div>
                 </div>
-                <div class="flex justify-end items-center gap-4">
-                  <p class="text-primary font-semibold">
+                <div
+                  class="flex flex-wrap justify-center lg:justify-end items-center gap-4"
+                >
+                  <p class="text-primary font-semibold text-sm lg:text-lg">
                     Lihat Detail Transaksi
                   </p>
                   <button
@@ -232,7 +264,9 @@ function handleActive(menu) {
               <div
                 class="card bg-white rounded-[12px] w-full border shadow-md p-5"
               >
-                <div class="date text-[#6D6D6D] flex items-center gap-3">
+                <div
+                  class="date text-[#6D6D6D] flex flex-wrap items-center gap-3"
+                >
                   <p>03 Juli 2022</p>
                   <p
                     class="inline-block px-3 py-[3px] rounded-lg text-[#A80038] bg-[#eea7bf]"
@@ -241,32 +275,42 @@ function handleActive(menu) {
                   </p>
                   <p>#325245</p>
                 </div>
-                <div class="card-content grid grid-cols-12 gap-5 mt-3">
+                <div class="card-content lg:grid lg:grid-cols-12 gap-5 mt-3">
                   <div class="col-span-3">
                     <div
                       class="w-full h-[246px] bg-[#6D6D6D] rounded-[10px]"
                     ></div>
                   </div>
                   <div class="col-span-6">
-                    <h4 class="text-2xl font-semibold">Ayam Geprek</h4>
-                    <div class="my-10">
+                    <h4 class="text-lg lg:text-2xl mt-3 lg:mt-0 font-semibold">
+                      Ayam Geprek
+                    </h4>
+                    <div class="my-3 lg:my-10">
                       <p class="text-[#6D6D6D]">Harga: 12.000</p>
                       <p class="text-[#6D6D6D]">Jumlah Pesanan : 30 Porsi</p>
                     </div>
-                    <h5 class="text-xl font-semibold text-primary">Selesai</h5>
+                    <h5 class="text-md lg:text-xl font-semibold text-primary">
+                      Selesai
+                    </h5>
                   </div>
                   <div class="col-span-3 flex gap-10 items-center">
-                    <div class="h-1/2 w-[3px] bg-[#6D6D6D]"></div>
-                    <div class="mb-10">
+                    <div
+                      class="hidden lg:block h-1/2 w-[3px] bg-[#6D6D6D]"
+                    ></div>
+                    <div class="mb-3 lg:mb-10">
                       <p class="text-[#6D6D6D]">Total Belanja</p>
-                      <h4 class="text-primary font-semibold text-3xl">
+                      <h4
+                        class="text-primary font-semibold text-lg lg:text-3xl"
+                      >
                         Rp. 360.000
                       </h4>
                     </div>
                   </div>
                 </div>
-                <div class="flex justify-end items-center gap-4">
-                  <p class="text-primary font-semibold">
+                <div
+                  class="flex justify-center lg:justify-end items-center gap-4"
+                >
+                  <p class="text-primary font-semibold text-sm lg:text-lg">
                     Lihat Detail Transaksi
                   </p>
                   <!-- <button class="bg-primary py-2 px-5 rounded-[10px] text-white">
@@ -281,7 +325,7 @@ function handleActive(menu) {
               class="card-review bg-white rounded-[12px] w-full border shadow-md p-5 mt-8"
             >
               <div
-                class="date text-[#6D6D6D] flex items-center gap-3 justify-end"
+                class="date text-[#6D6D6D] flex flex-wrap items-center gap-3 lg:justify-end"
               >
                 <p>03 Juli 2022</p>
                 <p
@@ -291,20 +335,26 @@ function handleActive(menu) {
                 </p>
                 <p>#325245</p>
               </div>
-              <div class="card-review-content grid grid-cols-12 gap-5 mt-5">
+              <div
+                class="card-review-content lg:grid lg:grid-cols-12 gap-5 mt-5"
+              >
                 <div class="col-span-3">
                   <div
                     class="w-full h-[246px] bg-[#6D6D6D] rounded-[10px]"
                   ></div>
                 </div>
                 <div class="col-span-6">
-                  <h4 class="text-2xl font-semibold">Ayam Geprek</h4>
-                  <div class="my-4">
+                  <h4 class="mt-2 lg:mt-0 text-lg lg:text-2xl font-semibold">
+                    Ayam Geprek
+                  </h4>
+                  <div class="my-2 lg:my-4">
                     <p class="text-[#6D6D6D]">Harga: 12.000</p>
                     <p class="text-[#6D6D6D]">Jumlah Pesanan: 30 Porsi</p>
                     <p class="text-[#6D6D6D]">Total Belanja: Rp. 360.000</p>
                   </div>
-                  <h5 class="text-xl text-[#303030]">Berikan Ulasan</h5>
+                  <h5 class="text-lg lg:text-xl text-[#303030]">
+                    Berikan Ulasan
+                  </h5>
                   <textarea
                     name="review"
                     id=""
@@ -364,7 +414,7 @@ function handleActive(menu) {
               </div>
               <div class="flex justify-end items-center gap-3 mt-3">
                 <button
-                  class="border border-[#6D6D6DCC] rounded-[10px] text-[#6D6D6DCC] w-1/6 px-5 py-1"
+                  class="border border-[#6D6D6DCC] rounded-[10px] text-[#6D6D6DCC] lg:w-1/6 px-5 py-1"
                   @click="
                     () => {
                       return (activeReview = false);
@@ -374,7 +424,7 @@ function handleActive(menu) {
                   Batal
                 </button>
                 <button
-                  class="border border-primary rounded-[10px] text-white bg-primary w-1/6 px-5 py-1"
+                  class="border border-primary rounded-[10px] text-white bg-primary lg:w-1/6 px-5 py-1"
                   @click="
                     () => {
                       return (activeReview = false);
@@ -388,7 +438,7 @@ function handleActive(menu) {
           </div>
         </div>
         <div v-if="active === 'Status Reservasi'">
-          <div class="grid grid-cols-12 gap-8 mt-8">
+          <div class="lg:grid lg:grid-cols-12 gap-8 mt-8">
             <div class="col-span-4">
               <div class="form-group">
                 <input
@@ -400,7 +450,7 @@ function handleActive(menu) {
                 />
               </div>
             </div>
-            <div class="col-span-4">
+            <div class="col-span-4 mt-2 lg:mt-0">
               <div class="form-group">
                 <select
                   name=""
@@ -414,7 +464,7 @@ function handleActive(menu) {
                 </select>
               </div>
             </div>
-            <div class="col-span-4">
+            <div class="col-span-4 mt-2 lg:mt-0">
               <div class="form-group">
                 <input
                   type="date"
@@ -437,15 +487,17 @@ function handleActive(menu) {
                 <p>03 Juli 2022</p>
                 <p>#325245</p>
               </div>
-              <div class="card-content grid grid-cols-12 gap-5 mt-3">
+              <div class="card-content lg:grid lg:grid-cols-12 gap-5 mt-3">
                 <div class="col-span-3">
                   <div
                     class="w-full h-[246px] bg-[#6D6D6D] rounded-[10px]"
                   ></div>
                 </div>
                 <div class="col-span-6">
-                  <h4 class="text-2xl font-semibold">Ahun Ismi</h4>
-                  <div class="my-10">
+                  <h4 class="mt-2 lg:mt-0 text-lg lg:text-2xl font-semibold">
+                    Ahun Ismi
+                  </h4>
+                  <div class="my-3 lg:my-10">
                     <p class="text-[#6D6D6D]">Jumlah Tamu : 30 orang</p>
                     <p class="text-[#6D6D6D]">Waktu Reservasi : 10.00 WIB</p>
                     <p class="text-[#6D6D6D]">Nomor Handphone : 086736817736</p>
@@ -456,16 +508,18 @@ function handleActive(menu) {
                   </div>
                 </div>
                 <div class="col-span-3 flex gap-10 items-center">
-                  <div class="h-1/2 w-[3px] bg-[#6D6D6D]"></div>
-                  <div class="mb-10">
+                  <div class="hidden lg:block h-1/2 w-[3px] bg-[#6D6D6D]"></div>
+                  <div class="mb-3 lg:mb-10">
                     <p class="text-[#6D6D6D]">Total Belanja</p>
-                    <h4 class="text-primary font-semibold text-3xl">
+                    <h4 class="text-primary font-semibold text-lg lg:text-3xl">
                       Rp. 360.000
                     </h4>
                   </div>
                 </div>
               </div>
-              <div class="flex justify-end items-center gap-4">
+              <div
+                class="flex justify-center lg:justify-end items-center gap-4"
+              >
                 <button
                   class="bg-white border border-primary py-2 px-5 rounded-[10px] text-primary"
                 >
@@ -483,15 +537,17 @@ function handleActive(menu) {
                 <p>03 Juli 2022</p>
                 <p>#325245</p>
               </div>
-              <div class="card-content grid grid-cols-12 gap-5 mt-3">
+              <div class="card-content lg:grid lg:grid-cols-12 gap-5 mt-3">
                 <div class="col-span-3">
                   <div
                     class="w-full h-[246px] bg-[#6D6D6D] rounded-[10px]"
                   ></div>
                 </div>
                 <div class="col-span-6">
-                  <h4 class="text-2xl font-semibold">Ahun Ismi</h4>
-                  <div class="my-10">
+                  <h4 class="mt-2 lg:mt-0 text-lg lg:text-2xl font-semibold">
+                    Ahun Ismi
+                  </h4>
+                  <div class="my-3 lg:my-10">
                     <p class="text-[#6D6D6D]">Jumlah Tamu : 30 orang</p>
                     <p class="text-[#6D6D6D]">Waktu Reservasi : 10.00 WIB</p>
                     <p class="text-[#6D6D6D]">Nomor Handphone : 086736817736</p>
@@ -502,16 +558,18 @@ function handleActive(menu) {
                   </div>
                 </div>
                 <div class="col-span-3 flex gap-10 items-center">
-                  <div class="h-1/2 w-[3px] bg-[#6D6D6D]"></div>
-                  <div class="mb-10">
+                  <div class="hidden lg:block h-1/2 w-[3px] bg-[#6D6D6D]"></div>
+                  <div class="mb-3 lg:mb-10">
                     <p class="text-[#6D6D6D]">Total Belanja</p>
-                    <h4 class="text-primary font-semibold text-3xl">
+                    <h4 class="text-primary font-semibold text-lg lg:text-3xl">
                       Rp. 360.000
                     </h4>
                   </div>
                 </div>
               </div>
-              <div class="flex justify-end items-center gap-4">
+              <div
+                class="flex justify-center lg:justify-end items-center gap-4"
+              >
                 <button
                   class="bg-[#4ED91D] border border-[#4ED91D] py-2 px-5 rounded-[10px] text-white"
                 >
@@ -529,15 +587,17 @@ function handleActive(menu) {
                 <p>03 Juli 2022</p>
                 <p>#325245</p>
               </div>
-              <div class="card-content grid grid-cols-12 gap-5 mt-3">
+              <div class="card-content lg:grid lg:grid-cols-12 gap-5 mt-3">
                 <div class="col-span-3">
                   <div
                     class="w-full h-[246px] bg-[#6D6D6D] rounded-[10px]"
                   ></div>
                 </div>
                 <div class="col-span-6">
-                  <h4 class="text-2xl font-semibold">Ahun Ismi</h4>
-                  <div class="my-10">
+                  <h4 class="mt-2 lg:mt-0 text-lg lg:text-2xl font-semibold">
+                    Ahun Ismi
+                  </h4>
+                  <div class="my-3 lg:my-10">
                     <p class="text-[#6D6D6D]">Jumlah Tamu : 30 orang</p>
                     <p class="text-[#6D6D6D]">Waktu Reservasi : 10.00 WIB</p>
                     <p class="text-[#6D6D6D]">Nomor Handphone : 086736817736</p>
@@ -548,16 +608,18 @@ function handleActive(menu) {
                   </div>
                 </div>
                 <div class="col-span-3 flex gap-10 items-center">
-                  <div class="h-1/2 w-[3px] bg-[#6D6D6D]"></div>
-                  <div class="mb-10">
+                  <div class="hidden lg:block h-1/2 w-[3px] bg-[#6D6D6D]"></div>
+                  <div class="mb-3 lg:mb-10">
                     <p class="text-[#6D6D6D]">Total Belanja</p>
-                    <h4 class="text-primary font-semibold text-3xl">
+                    <h4 class="text-primary font-semibold text-lg lg:text-3xl">
                       Rp. 360.000
                     </h4>
                   </div>
                 </div>
               </div>
-              <div class="flex justify-end items-center gap-4">
+              <div
+                class="flex justify-center lg:justify-end items-center gap-4"
+              >
                 <button
                   class="bg-primary border border-primary py-2 px-5 rounded-[10px] text-white"
                 >
@@ -568,7 +630,7 @@ function handleActive(menu) {
           </div>
         </div>
         <div v-if="active === 'Pengaturan Keamanan'">
-          <h4 class="font-semibold text-2xl text-center mt-10">
+          <h4 class="font-semibold text-lg lg:text-2xl text-center mt-10">
             Ubah Password
           </h4>
           <form>
@@ -589,14 +651,14 @@ function handleActive(menu) {
                 placeholder="Konfirmasi Password"
               />
             </div>
-            <div class="flex justify-end items-center gap-3 mt-8">
+            <div class="flex lg:justify-end items-center gap-3 mt-8">
               <button
-                class="bg-white px-12 py-2 border border-[#6D6D6D] rounded-[10px]"
+                class="bg-white w-1/2 lg:w-auto lg:px-12 py-2 border border-[#6D6D6D] rounded-[10px]"
               >
                 Batal
               </button>
               <button
-                class="bg-primary text-white px-12 py-2 border border-primary rounded-[10px]"
+                class="bg-primary text-white w-1/2 lg:w-auto lg:px-12 py-2 border border-primary rounded-[10px]"
               >
                 Ubah
               </button>

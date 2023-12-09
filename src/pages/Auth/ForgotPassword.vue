@@ -5,10 +5,10 @@ const route = useRoute();
 </script>
 <template>
   <div class="w-full min-h-screen grid grid-cols-12 p-3">
-    <div class="col-span-8 bg-forgotBackground bg-cover bg-no-repeat bg-center">
-      qwe
-    </div>
-    <div class="col-span-4 h-full pb-12">
+    <div
+      class="hidden lg:block col-span-8 bg-forgotBackground bg-cover bg-no-repeat bg-center"
+    ></div>
+    <div class="col-span-12 lg:col-span-4 h-full pb-12">
       <p class="text-right">Kahuripan Kafe</p>
       <div class="w-full h-full flex justify-center items-center">
         <div class="card">

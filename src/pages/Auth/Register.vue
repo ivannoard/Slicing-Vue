@@ -16,8 +16,8 @@ function handleSubmit(e) {
 </script>
 
 <template>
-  <div class="pt-32">
-    <div class="card shadow-md w-8/12 mx-auto container">
+  <div class="pt-32 px-5">
+    <div class="card shadow-md lg:w-8/12 mx-auto container">
       <div class="top bg-primary py-2">
         <h4 class="text-secondary text-center font-semibold text-xl">
           DAFTAR AKUN
@@ -33,22 +33,22 @@ function handleSubmit(e) {
               class="w-full px-5 py-2 border rounded-[10px]"
             />
           </div>
-          <div class="flex gap-3 mt-4">
-            <div class="form-group w-1/3">
+          <div class="flex flex-wrap lg:flex-nowrap gap-3 mt-4">
+            <div class="form-group lg:w-1/3">
               <input
                 type="email"
                 placeholder="Email Anda"
                 class="w-full px-5 py-2 border rounded-[10px]"
               />
             </div>
-            <div class="form-group w-1/3">
+            <div class="form-group lg:w-1/3">
               <input
                 type="email"
                 placeholder="Konfirmasi Email"
                 class="w-full px-5 py-2 border rounded-[10px]"
               />
             </div>
-            <div class="form-group w-1/3">
+            <div class="form-group lg:w-1/3">
               <input
                 type="text"
                 placeholder="Nomor Handphone"
@@ -74,15 +74,15 @@ function handleSubmit(e) {
               <option>Pemalang</option>
             </select>
           </div>
-          <div class="flex w-full gap-3 mt-4">
-            <div class="form-group w-1/2">
+          <div class="flex flex-wrap lg:flex-nowrap w-full gap-3 mt-4">
+            <div class="form-group lg:w-1/2">
               <input
                 type="password"
                 placeholder="Password"
                 class="w-full px-5 py-2 border rounded-[10px]"
               />
             </div>
-            <div class="form-group w-1/2">
+            <div class="form-group lg:w-1/2">
               <input
                 type="password"
                 placeholder="Konfirmasi Password"
@@ -91,7 +91,7 @@ function handleSubmit(e) {
             </div>
           </div>
           <button
-            class="bg-primary text-white font-semibold rounded-[10px] px-10 py-2 mt-4"
+            class="bg-primary text-white font-semibold rounded-[10px] px-10 py-2 mt-4 w-full lg:w-auto"
           >
             Submit
           </button>

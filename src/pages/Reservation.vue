@@ -22,7 +22,9 @@ function handleModalOpen() {
     v-if="isModalOpen"
     class="fixed left-0 right-0 mx-auto z-[11] flex w-full h-full items-center justify-center bg-dark bg-opacity-50"
   >
-    <div class="bg-white rounded-md w-1/3 border shadow-md px-4 py-8">
+    <div
+      class="bg-white rounded-md w-full h-1/2 lg:h-9/12 lg:w-1/3 border shadow-md px-4 py-8 overflow-scroll"
+    >
       <h4 class="title text-dark font-semibold text-xl text-center mb-4">
         Langkah - langkah melakukan reservasi
       </h4>
@@ -38,12 +40,15 @@ function handleModalOpen() {
     </div>
   </div>
   <div class="pt-28">
-    <section class="container px-10 mx-auto">
-      <p class="text-primary text-right" @click="handleModalOpen()">
+    <section class="container px-5 lg:px-10 mx-auto">
+      <p
+        class="text-primary text-left lg:text-right"
+        @click="handleModalOpen()"
+      >
         Baca langkah-langkah reservasi
       </p>
-      <div class="flex w-full gap-10 mt-8">
-        <div class="w-1/2">
+      <div class="flex flex-col lg:flex-row w-full gap-10 mt-8">
+        <div class="w-full lg:w-1/2">
           <div class="header flex items-center gap-5">
             <h4 class="text-dark text-xl font-semibold">Data Pemesan</h4>
             <p>
@@ -66,7 +71,7 @@ function handleModalOpen() {
             </div>
           </form>
         </div>
-        <div class="w-1/2">
+        <div class="w-full lg:w-1/2">
           <h4 class="text-dark text-xl font-semibold">Detail Reservasi</h4>
           <form class="mt-4 flex flex-col gap-4">
             <div class="form-group flex justify-between items-center gap-5">
@@ -92,7 +97,7 @@ function handleModalOpen() {
         </div>
       </div>
       <button
-        class="w-1/4 font-semibold mt-10 px-10 py-3 bg-primary block mx-auto rounded-full text-white"
+        class="w-full lg:w-1/4 font-semibold mt-10 px-10 py-3 bg-primary block mx-auto rounded-full text-white"
       >
         Reservasi
       </button>

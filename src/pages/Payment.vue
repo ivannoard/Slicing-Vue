@@ -2,7 +2,7 @@
 import VueCountdown from "@hebertsilva/vue-countdown";
 </script>
 <template>
-  <div class="pt-28 px-10 container mx-auto">
+  <div class="pt-28 px-5 lg:px-10 container mx-auto">
     <div class="text-center">
       <h2 class="font-semibold text-2xl">Selesaikan Pembayaranmu dalam</h2>
       <h2 class="text-primary text-2xl font-semibold mt-3">20:13:34</h2>
@@ -10,7 +10,7 @@ import VueCountdown from "@hebertsilva/vue-countdown";
       <h2 class="font-semibold text-2xl mt-3">Senin, 23 Agustus 2023 08:30</h2>
     </div>
     <div class="flex justify-center">
-      <div class="border shadow-md rounded-[3px] w-8/12 p-5">
+      <div class="border shadow-md rounded-[3px] w-full lg:w-8/12 p-5">
         <div class="flex justify-between items-center border-b-2 pb-4">
           <h5 class="font-semibold">BRIVA</h5>
           <p>Logo BRIVA</p>
@@ -22,7 +22,7 @@ import VueCountdown from "@hebertsilva/vue-countdown";
       </div>
     </div>
     <div class="flex justify-center mt-8">
-      <div class="w-8/12">
+      <div class="w-full lg:w-8/12">
         <h4 class="text-xl font-semibold">Cara Pembayaran</h4>
         <div class="menus flex flex-col gap-6 mt-6 px-3">
           <div class="menu flex w-full items-center justify-between">

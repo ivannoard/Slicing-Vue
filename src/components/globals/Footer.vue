@@ -4,9 +4,9 @@ import TextLogo from "./TextLogo.vue";
 </script>
 <template>
   <footer
-    class="bg-primary text-secondary w-full grid grid-cols-12 container mx-auto px-10 py-12"
+    class="bg-primary text-secondary w-full grid grid-cols-12 container mx-auto px-5 lg:px-10 py-12"
   >
-    <div class="col-span-7">
+    <div class="col-span-12 mt-5 lg:col-span-7">
       <div class="w-1/2">
         <div class="w-[200px]">
           <div class="text-logo font-logo hidden lg:block text-white">
@@ -26,7 +26,7 @@ import TextLogo from "./TextLogo.vue";
         </div>
       </div>
     </div>
-    <div class="col-span-2">
+    <div class="col-span-12 mt-5 lg:col-span-2">
       <h4 class="font-semibold text-white">Navigasi</h4>
       <div class="menus flex flex-col gap-3 mt-3">
         <p>Tentang Kami</p>
@@ -34,7 +34,7 @@ import TextLogo from "./TextLogo.vue";
         <p>Reservasi</p>
       </div>
     </div>
-    <div class="col-span-3">
+    <div class="col-span-12 mt-5 lg:col-span-3">
       <h4 class="font-semibold text-white">Alamat</h4>
       <img :src="Map" alt="" class="mt-3" />
       <p class="mt-3">
